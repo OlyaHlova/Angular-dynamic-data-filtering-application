@@ -1,15 +1,17 @@
-<form [formGroup]="filterForm" (ngSubmit)="applyFilter()">
-    <label for="category">Category:</label>
-
-    <select formControlName="selectedCategory" (change)="applyCategoryFilter($event)">
-        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
-      
-    <label for="priceFrom">Price From:</label>
-    <input type="number" id="priceFrom" formControlName="priceFrom">
-  
-    <label for="priceTo">Price To:</label>
-    <input type="number" id="priceTo" formControlName="priceTo">
-  
-    <button type="submit">Apply Filter</button>
+<form class="liner-block" [formGroup]="filterForm" (ngSubmit)="applyFilter()">
+    <div>
+        <label for="category">Category:</label>
+        <select formControlName="selectedCategory" (change)="applyCategoryFilter($event)">
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+        </select>
+    </div>
+    <div>
+        <label for="priceFrom">Price From:</label>
+        <input type="number" id="priceFrom" formControlName="priceFrom">
+    </div>
+    <div>
+        <label for="priceTo">Price To:</label>
+        <input type="number" id="priceTo" formControlName="priceTo">
+    </div>
+    <button type="submit" class="btn apply">Apply Filter</button>
 </form>

@@ -2,45 +2,46 @@
                     (filterChanged)="applyFilter($event)"
                     ></app-product-filter>
 
-<table class="mat-elevation-z8">
-  <thead>
-    <tr>
-      <th *ngFor="let column of displayedColumns">{{ column }}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of getDisplayedProducts()">
-      <td *ngFor="let column of displayedColumns">{{ product[column] }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<div>
-  <button class="btn" (click)="onPreviousPage()">
-    Previous
-  </button>
-  <button class="btn" (click)="onNextPage()">
-    Next
-  </button>
+<div class="main__content">
+  <div class="product__content">
+      <section class="product-list container">
+          <div class="product-list__card secondary-title" >
+              <div class="product-list__item" 
+                  *ngFor="let column of displayedColumns"
+                  >{{ column }}</div>
+          </div>
+          <div class="product-list__card" *ngFor="let product of getDisplayedProducts()">
+              <div class="product-list__item" 
+                  *ngFor="let column of displayedColumns">{{ product[column] }}</div>
+          </div>
+      </section>
+  </div>
 </div>
 
-<select (change)="onPageSizeChange($event)">
-  <option *ngFor="let option of pageSizeOptions" 
-          [value]="option" 
-          [selected]="option === pageSize">
-      {{ option }}
-  </option>
-</select>
+<div class="pagination liner-block">
+  <div>
+    <button class="btn" (click)="goToFirstPage()">First</button>
+    <button class="btn" (click)="onPreviousPage()">Previous</button>
+  </div>
 
-<div>
-  <button class="btn" (click)="goToFirstPage()">
-    First
-  </button>
-  <button class="btn" (click)="goToLastPage()">
-    Last
-  </button>
+  <div class="pagination-item">
+    <span>Products on page</span>
+    <select (change)="onPageSizeChange($event)">
+      <option *ngFor="let option of pageSizeOptions" 
+              [value]="option" 
+              [selected]="option === pageSize">
+          {{ option }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <button class="btn" (click)="onNextPage()">Next</button>
+    <button class="btn" (click)="goToLastPage()">Last</button>
+  </div>
+
+  <p>
+    Showing {{ getDisplayedProductsRange() }}
+  </p>
+
 </div>
-
-<p>
-  Showing {{ getDisplayedProductsRange() }}
-</p>

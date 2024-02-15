@@ -1,0 +1,75 @@
+@import './../../../styles/variables.scss';
+
+.main__content {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.product__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-height: calc(100vh - 110px);
+    overflow-y: scroll;
+}
+
+.product-action__content {
+    width: calc(30% - 26px);
+    margin-top: 8px;
+}
+
+.product-list {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.product-list__card {
+    @media screen and (min-width: 640px){
+        display: grid;
+        grid-template-columns: 5% 30% 10% 35% 20%;
+        gap: 16px;
+        align-items: center;
+        overflow-wrap: anywhere;
+        margin-bottom: 2px;
+        
+        &:first-of-type {
+            display: grid !important;
+        }
+    }
+
+    &:first-of-type {
+        display: none;
+    }
+}
+
+.product-list__card { 
+    padding: 22px 26px 21px;
+}
+
+.product-list__card {
+    &:not(.secondary-title) {
+        background-color: $custom-yellow-light-color;
+    
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: $custom-blue-light-color;
+        }
+    }
+}
+
+.secondary-title {
+    text-transform: uppercase;
+    color: $basic-title-font-color;
+    font-weight: bold;
+}
+
+.liner-block {
+    margin-top: 16px;   
+}
