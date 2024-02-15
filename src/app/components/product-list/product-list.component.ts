@@ -72,7 +72,6 @@ export class ProductListComponent implements OnInit {
     this.totalPages = Math.ceil(this.filteredProducts.length / this.pageSize);
   }
 
-  
   goToFirstPage(): void {
     this.currentPage = 0;
     this.updatePage();
@@ -97,7 +96,6 @@ export class ProductListComponent implements OnInit {
 
   applyFilter(filters: any): void {
     this.filteredProducts = this.filterService.filterProducts(this.products, filters);
-    console.log('Filters applied:', filters); // Перевірка
     this.updatePage();
   }
 

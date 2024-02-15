@@ -12,7 +12,6 @@ export class FilterService {
     let filteredProducts = [...products];
 
     if (filters.selectedCategory) {
-      console.log('category--', filters.selectedCategory)
       filteredProducts = filteredProducts.filter(product => product.category.toLowerCase().includes(filters.selectedCategory.toLowerCase()));
     }
 
