@@ -1,7 +1,10 @@
 <form [formGroup]="filterForm" (ngSubmit)="applyFilter()">
     <label for="category">Category:</label>
-    <input type="text" id="category" formControlName="category">
-  
+
+    <select formControlName="selectedCategory" (change)="applyCategoryFilter($event)">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+      
     <label for="priceFrom">Price From:</label>
     <input type="number" id="priceFrom" formControlName="priceFrom">
   

@@ -11,8 +11,9 @@ export class FilterService {
   filterProducts(products: IProduct[], filters: any): IProduct[] {
     let filteredProducts = [...products];
 
-    if (filters.category) {
-      filteredProducts = filteredProducts.filter(product => product.category.toLowerCase().includes(filters.category.toLowerCase()));
+    if (filters.selectedCategory) {
+      console.log('category--', filters.selectedCategory)
+      filteredProducts = filteredProducts.filter(product => product.category.toLowerCase().includes(filters.selectedCategory.toLowerCase()));
     }
 
     if (filters.priceFrom) {
