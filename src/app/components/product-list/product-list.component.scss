@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: flex-end;
     max-height: calc(100vh - 110px);
-    overflow-y: scroll;
+    overflow-y: overlay;
     overflow-x: hidden;
 }
 
