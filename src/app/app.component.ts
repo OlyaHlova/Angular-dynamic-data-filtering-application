@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [ProductFilterComponent,
+            ProductListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
-  title = 'angular-dynamic-data-filtering-application';
+  
 }

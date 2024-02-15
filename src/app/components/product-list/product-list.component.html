@@ -1,0 +1,43 @@
+<div>
+  <button class="btn" (click)="onPreviousPage()">
+    Previous
+  </button>
+  <button class="btn" (click)="onNextPage()">
+    Next
+  </button>
+</div>
+
+<select (change)="onPageSizeChange($event)">
+  <option *ngFor="let option of pageSizeOptions" 
+          [value]="option" 
+          [selected]="option === pageSize">
+      {{ option }}
+  </option>
+</select>
+
+<div>
+  <button class="btn" (click)="goToFirstPage()">
+    First
+  </button>
+  <button class="btn" (click)="goToLastPage()">
+    Last
+  </button>
+</div>
+
+<p>
+  Showing {{ getDisplayedProductsRange() }}
+</p>
+
+
+<table class="mat-elevation-z8">
+  <thead>
+    <tr>
+      <th *ngFor="let column of displayedColumns">{{ column }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of getDisplayedProducts()">
+      <td *ngFor="let column of displayedColumns">{{ product[column] }}</td>
+    </tr>
+  </tbody>
+</table>
