@@ -39,16 +39,26 @@ The dataset used in the application consists of at least 1000 records of fiction
 The Angular Product Catalog is built using Angular, a popular TypeScript-based web application framework. The project structure follows Angular's recommended best practices to ensure cleanliness, maintainability, and scalability. Below is a high-level overview of the project structure:
 
 src/: Contains the source code of the Angular application.
+
 app/: Contains the application-specific components, services, and modules.
+
 components/: Contains Angular components responsible for UI presentation.
+
 product-list/: Contains the product list component responsible for displaying the dataset in a table format and handling filtering operations.
+
 product-filter/: Contains the product filter component responsible for providing advanced filtering options.
+
 models/: Contains TypeScript interfaces representing the data models used in the application.
+
 services/: Contains Angular services responsible for fetching data and handling filtering logic.
+
 shared/: Contains shared modules, components, directives, and pipes used across the application.
+
 assets/: Contains static assets such as images, icons, and CSS files.
+
 environments/: Contains environment-specific configuration files.
-Data Display:
+
+## Data Display:
 The dataset is displayed in a table format using the product list component. Pagination is implemented to handle a large dataset efficiently, ensuring optimal performance and user experience. Each row in the table displays product details, including name, category, price, and other relevant information.
 
 ## Filtering:
